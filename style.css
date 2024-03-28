@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #b3d0ff; /* Цвет неба */
+  }
+  
+  .house {
+    position: relative;
+    width: 100px;
+    height: 120px;
+    background-color: #e6e6e6; /* Цвет основания дома */
+  }
+  
+  .roof {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid #cc6600; /* Цвет крыши */
+    transform: translateX(-50%);
+  }
+  
+  .window {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #b3d0ff; /* Цвет окна */
+    border-radius: 50%;
+    transform: translateX(-50%);
+    overflow: hidden; /* Чтобы скрыть часть линий, выходящую за пределы окна */
+  }
+  
+  .window::before,
+  .window::after {
+    content: '';
+    position: absolute;
+    background-color: #fff; /* Цвет перекрестия */
+  }
+  
+  .window::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Толщина горизонтальной линии */
+  }
+  
+  .window::after {
+    top: 0;
+    left: 50%;
+    width: 2px; /* Толщина вертикальной линии */
+    height: 100%;
+  }
+  
+  .tube {
+    position: absolute;
+    top: -70px;
+    left: 30%;
+    width: 20px;
+    height: 70px;
+    z-index: -1;
+    background-color: #999999; /* Цвет дымохода */
+    transform: translateX(-50%);
+  }
